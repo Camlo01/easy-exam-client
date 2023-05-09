@@ -1,0 +1,17 @@
+.cardNewQuestion {
+    padding: 25px;
+    margin: 20px;
+    max-width: 96vw;
+    border-radius: 9px;
+    background-color: rgba(241, 241, 241, 0.692);
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+.buttonClose {
+    padding: 6px;
+    /* width: 25px; */
+    background-color: red;
+    color: white;
+    position: relative;
+    right: -20px;
+}
