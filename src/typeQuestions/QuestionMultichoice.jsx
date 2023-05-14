@@ -36,9 +36,9 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
         addQuestion(newQuestionMultichoice)
         showNextQuestion();
     }
- 
+
     function defineValue(value) {
-        return (value.length < 1)?"FALSE": "TRUE";
+        return (value == "on") ? "TRUE" : "FALSE";
     }
 
 
@@ -58,25 +58,25 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
                 <label htmlFor="" id="">(Opción/Pregunta)</label>
                 <input type="text" onChange={(e) => setAnswer1(e.target.value)} />
-                <input type="checkbox" onChange={(e) => setIsAnswer1(e.target.value == "on" ? "TRUE" : "FALSE")} />
+                <input type="checkbox" onChange={(e) => setIsAnswer1(e.target.value)} />
                 <br />
 
                 <br />
                 <label htmlFor="">(Opción/Pregunta)</label>
                 <input type="text" onChange={(e) => setAnswer2(e.target.value)} />
-                <input type="checkbox" onChange={(e) => setIsAnswer2(e.target.value == "on" ? "TRUE" : "FALSE")} />
+                <input type="checkbox" onChange={(e) => setIsAnswer2(e.target.value)} />
                 <br />
 
                 <br />
                 <label htmlFor="">(Opción/Pregunta)</label>
                 <input type="text" onChange={(e) => setAnswer3(e.target.value)} />
-                <input type="checkbox" onChange={(e) => setIsAnswer3(e.target.value == "on" ? "TRUE" : "FALSE")} />
+                <input type="checkbox" onChange={(e) => setIsAnswer3(e.target.value)} />
                 <br />
 
                 <br />
                 <label htmlFor="">(Opción/Pregunta)</label>
                 <input type="text" onChange={(e) => setAnswer4(e.target.value)} />
-                <input type="checkbox" onChange={(e) => setIsAnswer4(e.target.value == "on" ? "TRUE" : "FALSE")} />
+                <input type="checkbox" onChange={(e) => setIsAnswer4(e.target.value)} />
                 <br />
                 <br />
                 <br />

@@ -1,7 +1,7 @@
 {
   "name": "easy-exam",
   "private": true,
-  "homepage": "https://camlo01.github.io/easy-exam-client/",
+  "homepage": "http://camlo01.github.io/easy-exam-client",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

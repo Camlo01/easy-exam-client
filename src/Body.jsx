@@ -28,7 +28,6 @@ export default function Body() {
     }
 
     function addQuestion(newQuestion) {
-        console.log(newQuestion)
         const newId = consecutive + 1;
         setConsecutive(newId)
         newQuestion.setId(newId)
@@ -88,12 +87,18 @@ export default function Body() {
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
                         <p>Escribe el nombre de como deseas llamar tu archivo: </p>
-                        <input id="input-to-clear" type="text" onChange={(e) => { setFileName(e.target.value); }} />
+                        <br />
+                        <input id="input-to-clear"
+                            placeholder="Nombre del archivo"
+                            type="text" onChange={(e) => { setFileName(e.target.value); }} />
                         <br />
                         <br />
                         <p><b>Descarga tu examente</b> en el formato deseado</p>
                         <button type="submit" onClick={() => exportFile("XLS")}> Generar Excel</button>
                         <button type="submit" onClick={() => exportFile("CSV")}>Generar CSV</button>
+                        <br />
+                        <br />
+                        <button type="submit" onClick={() => clearQuestions()}>Limpiar preguntas</button>
                     </form>
                 </div>
             </div >
