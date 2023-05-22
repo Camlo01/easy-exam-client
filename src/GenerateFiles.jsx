@@ -1,3 +1,5 @@
+
+const URLHost = "http://3.14.27.129:8080/questionnaire";
 /**
  * Descarga un archivo de excel de extensión XSL
  * @param {Array} questions - Array de objetos de preguntas 
@@ -5,7 +7,7 @@
  */
 export function generateFileAsExcel(questions, nameFile) {
 
-    const URL = "http://localhost:8085/api/easy-exam/questionnaire/document-xls"
+    const URL = `${URLHost}/document-xls`
 
     fetch(URL, {
         method: "POST",
@@ -33,7 +35,7 @@ export function generateFileAsExcel(questions, nameFile) {
  */
 export function generateFileAsCSV(questions, nameFile) {
 
-    const URL = "http://192.168.10.9:8085/api/easy-exam/questionnaire/document-csv"
+    const URL = `${URLHost}/document-csv`
 
     fetch(URL, {
         method: "POST",
