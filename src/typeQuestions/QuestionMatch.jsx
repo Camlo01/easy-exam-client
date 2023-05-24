@@ -35,9 +35,10 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
     return (<>
         <br />
         <br />
-        <h3>Pregunta de emparejas</h3>
+        <h3>Pregunta de emparejar</h3>
         <br />
-        <p>Empareja las preguntas u upciones con su respuesta al lado</p>
+        <p></p>
+        <p>Después de escribir tu pregunta, crea la opción con su pareja correcta</p>
         <br />
         <form onSubmit={handleSubmit}>
             <label htmlFor="">Pregunta:</label>

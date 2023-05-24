@@ -28,7 +28,6 @@ export default function Body() {
     }
 
     function addQuestion(newQuestion) {
-        console.log(newQuestion)
         const newId = consecutive + 1;
         setConsecutive(newId)
         newQuestion.setId(newId)
@@ -58,8 +57,10 @@ export default function Body() {
         if (questions.length === 0) {
             return (
                 <>
-                    <h2> <b> Encuentra tus preguntas </b></h2>
-                    <p>En este apartado encontrarás las preguntas del examen que vas a Generar</p>
+                    <br />
+                    <h2><b>Encuentra aquí tus preguntas...</b></h2>
+                    <p>Las preguntas del examen que vas a generar</p>
+                    <br />
                 </>
             )
         }
@@ -81,23 +82,32 @@ export default function Body() {
     return (
         <>
             <div>
+                {/* Component with form for creating questions */}
                 <FormQuestion addQuestion={addQuestion} />
 
+                {/* Component that renders all questions */}
                 {displayQuestions()}
                 <br />
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
-                        <p>Escribe el nombre de como deseas llamar tu archivo: </p>
-                        <input id="input-to-clear" type="text" onChange={(e) => { setFileName(e.target.value); }} />
+                        <p style={{ fontSize: "1.6rem" }}>Nombra tu archivo: </p>
+                        <br />
+                        <input id="input-to-clear"
+                            placeholder="Nombre del archivo"
+                            type="text" onChange={(e) => { setFileName(e.target.value); }} />
                         <br />
                         <br />
-                        <p><b>Descarga tu examente</b> en el formato deseado</p>
-                        <button type="submit" onClick={() => exportFile("XLS")}> Generar Excel</button>
-                        <button type="submit" onClick={() => exportFile("CSV")}>Generar CSV</button>
-                    </form>
-                </div>
-            </div >
+                        <p style={{ fontSize: "1.5rem" }}><b>Formato</b> de descarga:</p>
+                        <button style={{backgroundColor:"rgb(255, 68, 68)", fontWeight:800}} type="submit" onClick={() => exportFile("XLS")}> Excel</button>
+                    <button style={{backgroundColor: "rgb(51, 119, 13)", color:"white",fontWeight:800}} type="submit" onClick={() => exportFile("CSV")}>CSV</button>
+                    <br />
+                    <br />
+                    <button type="submit" onClick={() => clearQuestions()}>Limpiar preguntas</button>
+                </form>
+            </div>
+        </div >
         </>
     )
+    
 
 }

@@ -6,7 +6,7 @@ export default function Info() {
         <div className="body-text">
             <div className="body-text-card">
                 <h1>Bienvenido!</h1>
-                <p>En esta página puedes generar exámenes y exportarlos en formato Excel y CSV.</p>
+                <p>Sitio web creado para generar exámenes y exportarlos</p>
             </div>
         </div>
     )

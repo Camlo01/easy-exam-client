@@ -34,8 +34,8 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
         <>
             <br /><br />
             <h3>Pregunta de secuencia</h3>
-            <p>Escriba las palabras en el orden que desea que vayan</p>
             <br />
+            <p>Escriba las opciones en el orden correcto </p>
             <br />
             <form onSubmit={handleSubmit}>
                 <label htmlFor="" >Pregunta: </label>
