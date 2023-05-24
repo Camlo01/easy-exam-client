@@ -25,7 +25,7 @@ export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
         <br />
         <h3>Pregunta de texto libre</h3>
         <br />
-        <p>Este tipo de pregunta <b>no es recomendable</b> ya que requerirá de una calificación manual</p>
+        <p><b>NO RECOMENDABLE:</b> no es recomendable debido a que requiere de calificación manual</p>
         <br />
         <form onSubmit={handleSubmit}>
             <label htmlFor="" >Pregunta: </label>

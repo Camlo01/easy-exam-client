@@ -34,9 +34,9 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
     return (
         <>
             <br /><br />
-            <h3>Pregunta de palabra clave</h3>
+            <h3>Pregunta de palabras claves</h3>
             <br />
-            <p>Escriba las palabras en el orden que desea que vayan</p>
+            <p>Escriba palabras que deban ir en la respuesta</p>
             <br />
             <form onSubmit={handleSubmit}>
                 <label htmlFor="">Pregunta: </label>
