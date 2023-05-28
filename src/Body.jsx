@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Body.css"
 import FormQuestion from "./Form";
 import behavior from "./generateButtonsBehavior";
+import ShowQuestions from './displayQuestions/ShowQuestions'
 
 export default function Body() {
 
@@ -23,22 +24,36 @@ export default function Body() {
         }
     });
 
+    /**
+     * Method in charge of delete questions of the array
+     * @param {int} id of question to delete 
+     */
     function deleteQuestion(id) {
         setQuestions(questions.filter(q => q.id !== id))
     }
 
-    function addQuestion(newQuestion) {
+    /**
+     * Method in charge of add questions to the array
+     * @param {Object} question 
+     */
+    function addQuestion(question) {
         const newId = consecutive + 1;
         setConsecutive(newId)
-        newQuestion.setId(newId)
-        setQuestions([...questions, newQuestion])
+        question.setId(newId)
+        setQuestions([...questions, question])
     }
 
-
+    /**
+     * Clear the array of questions
+     */
     function clearQuestions() {
         setQuestions([])
     }
 
+    /**
+     * Method in charge of exporting the question array to obtain the file in the desired format
+     * @param {String} extension ( XLS or CSV)
+     */
     function exportFile(extension) {
         if (questions.length < 1) {
             alert("Crea al menos una pregunta")
@@ -50,35 +65,8 @@ export default function Body() {
             // document.getElementById("input-to-clear").value = "";
             // alert("Correcto")
         }
-
     }
 
-    function displayQuestions() {
-        if (questions.length === 0) {
-            return (
-                <>
-                    <br />
-                    <h2><b>Encuentra aquí tus preguntas...</b></h2>
-                    <p>Las preguntas del examen que vas a generar</p>
-                    <br />
-                </>
-            )
-        }
-
-        return questions.map((question, i) => (
-            <div key={i}>
-                <hr />
-                <br />
-                <p>Pregunta #{i + 1}</p>
-                <br />
-                <p>Tipo: {question.questionType ?? "UNDEFINED"}</p>
-                <p>Pregunta: {question.questionText ?? "UNDEFINED"}</p>
-                <button onClick={() => deleteQuestion(question.id ?? 99)}>Eliminar</button>
-                <br />
-                <br />
-            </div>
-        ))
-    }
     return (
         <>
             <div>
@@ -86,7 +74,9 @@ export default function Body() {
                 <FormQuestion addQuestion={addQuestion} />
 
                 {/* Component that renders all questions */}
-                {displayQuestions()}
+                <ShowQuestions questions={questions} deleteQuestion={deleteQuestion} />
+
+                {/* AS */}
                 <br />
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
@@ -98,16 +88,16 @@ export default function Body() {
                         <br />
                         <br />
                         <p style={{ fontSize: "1.5rem" }}><b>Formato</b> de descarga:</p>
-                        <button style={{backgroundColor:"rgb(255, 68, 68)", fontWeight:800}} type="submit" onClick={() => exportFile("XLS")}> Excel</button>
-                    <button style={{backgroundColor: "rgb(51, 119, 13)", color:"white",fontWeight:800}} type="submit" onClick={() => exportFile("CSV")}>CSV</button>
-                    <br />
-                    <br />
-                    <button type="submit" onClick={() => clearQuestions()}>Limpiar preguntas</button>
-                </form>
-            </div>
-        </div >
+                        <button style={{ backgroundColor: "rgb(255, 68, 68)", borderRadius: "12px", fontWeight: 800 }} type="submit" onClick={() => exportFile("XLS")}> Excel</button>
+                        <button style={{ backgroundColor: "rgb(51, 119, 13)", borderRadius: "12px", color: "white", fontWeight: 800 }} type="submit" onClick={() => exportFile("CSV")}>CSV</button>
+                        <br />
+                        <br />
+                        <br />
+                        <button style={{ borderRadius: "12px" }} type="submit" onClick={() => clearQuestions()}>Limpiar preguntas</button>
+                    </form>
+                </div>
+            </div >
         </>
     )
-    
 
 }
