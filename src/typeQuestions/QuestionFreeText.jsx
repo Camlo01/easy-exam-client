@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import "./styles/QuestionStyles.css"
 
 export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
 
@@ -21,21 +22,22 @@ export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
     }
 
     return (<>
-        <br />
-        <br />
-        <h3>Pregunta de texto libre</h3>
-        <br />
-        <p><b>NO RECOMENDABLE:</b> no es recomendable debido a que requiere de calificación manual</p>
-        <br />
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="" >Pregunta: </label>
-            <input
-                type="text"
-                placeholder="Escribe tu pregunta"
-                onChange={(e) => setText(e.target.value)} />
-            <br />
-            <br />
-            <button >añadir pregunta</button>
-        </form>
+        <div className='card-container'>
+
+            <div className='question-title'>
+                <h3 >Texto Libre</h3>
+                <p className='question-annotation'><b>¡IMPORTANTE!</b></p>
+                <p >Este tipo de preguntas requieren de una calificación manual</p>
+            </div>
+            <form className='form' onSubmit={handleSubmit}>
+                <div className='question-text--container'>
+                    <p>Pregunta:</p>
+                    <textarea placeholder="Ejemplo: Explica el proceso de lavado de manos" onChange={(e) => setText(e.target.value)}></textarea>
+                </div>
+                <div className='question-button'>
+                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                </div>
+            </form>
+        </div>
     </>)
 }

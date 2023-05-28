@@ -30,47 +30,44 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
 
     }
 
-    return (
-        <>
-            <br /><br />
-            <h3>Pregunta de secuencia</h3>
-            <br />
-            <p>Escriba las opciones en el orden correcto </p>
-            <br />
+    return (<>
+        <div className='card-container'>
+            <div className="question-title">
+                <h3 className=''>Pregunta de secuencia</h3>
+                <p className=''>Escriba las opciones en el orden correcto </p>
+            </div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="" >Pregunta: </label>
-                <input
-                    type="text"
-                    placeholder="Escribe tu pregunta"
-                    onChange={(e) => setText(e.target.value)} />
-                <br />
-                <br />
+                <div className='question-text--container'>
+                    <p>Pregunta: </p>
+                    <textarea placeholder="Ejemplo: Ordena los planetas" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
+                </div>
 
-                <label htmlFor="">1.</label>
-                <input type="text" onChange={(e) => setSequenceText1(e.target.value)} />
-                <br />
+                <div className="question-answer--container">
+                    <div className="answer-container--option">
+                        <label htmlFor="">Puesto: 1.</label>
+                        <textarea placeholder="Mercurio" onChange={(e) => setSequenceText1(e.target.value)} />
+                    </div>
 
+                    <div className="answer-container--option">
+                        <label htmlFor="">Puesto: 2.</label>
+                        <textarea placeholder="Venus" onChange={(e) => setSequenceText2(e.target.value)} />
+                    </div>
 
-                <br />
-                <label htmlFor="">2.</label>
-                <input type="text" onChange={(e) => setSequenceText2(e.target.value)} />
-                <br />
+                    <div className="answer-container--option">
+                        <label htmlFor="">Puesto: 3.</label>
+                        <textarea placeholder="Tierra" onChange={(e) => setSequenceText3(e.target.value)} />
+                    </div>
 
+                    <div className="answer-container--option">
+                        <label htmlFor="">Puesto:  4.</label>
+                        <textarea placeholder="Marte" onChange={(e) => setSequenceText4(e.target.value)} />
+                    </div>
+                </div>
 
-                <br />
-                <label htmlFor="">3.</label>
-                <input type="text" onChange={(e) => setSequenceText3(e.target.value)} />
-                <br />
-
-
-                <br />
-                <label htmlFor="">4.</label>
-                <input type="text" onChange={(e) => setSequenceText4(e.target.value)} />
-                <br />
-
-                <br />
-                <br />
-                <button>añadir pregunta</button>
+                <div className="question-button">
+                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                </div>
             </form>
-        </>)
+        </div>
+    </>)
 }

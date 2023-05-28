@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './styles/QuestionStyles.css'
 
 export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
 
@@ -33,40 +34,41 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
 
     return (
         <>
-            <br /><br />
-            <h3>Pregunta de palabras claves</h3>
-            <br />
-            <p>Escriba palabras que deban ir en la respuesta</p>
-            <br />
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="">Pregunta: </label>
-                <input type="text" onChange={(e) => setText(e.target.value)} />
-                <br />
-                <br />
+            <div className="card-container">
+                <div className="question-title">
+                    <h3 className="question-title">Pregunta de palabras claves</h3>
+                    <p className="question-body">Escriba palabras que deban ir en la respuesta</p>
+                </div>
+                <form onSubmit={handleSubmit}>
+                 
+                    <div className="question-text--container">
+                        <p>Pregunta: </p>
+                        <textarea placeholder="Ejemplo: Escribe la receta para hacer un pastel" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
+                    </div>
 
-                <label htmlFor="">palabra 1.</label>
-                <input type="text" onChange={(e) => setAnswer1(e.target.value)} />
-                <br />
-                <br />
-
-                <label htmlFor="">palabra 2.</label>
-                <input type="text" onChange={(e) => setAnswer2(e.target.value)} />
-                <br />
-                <br />
-
-                <label htmlFor="">palabra 3.</label>
-                <input type="text" onChange={(e) => setAnswer3(e.target.value)} />
-                <br />
-                <br />
-
-                <label htmlFor="">palabra 4.</label>
-                <input type="text" onChange={(e) => setAnswer4(e.target.value)} />
-                <br />
-                <br />
-                <button>añadir pregunta</button>
-
-            </form>
-
+                    <div className="question-answer--container">
+                        <div className="answer-container--option">
+                            <label htmlFor="">palabra 1.</label>
+                            <textarea type="text" placeholder="huevos" onChange={(e) => setAnswer1(e.target.value)} />
+                        </div>
+                        <div className="answer-container--option">
+                            <label htmlFor="">palabra 2.</label>
+                            <textarea type="text" placeholder="leche" onChange={(e) => setAnswer2(e.target.value)} />
+                        </div>
+                        <div className="answer-container--option">
+                            <label htmlFor="">palabra 3.</label>
+                            <textarea type="text" placeholder="arina" onChange={(e) => setAnswer3(e.target.value)} />
+                        </div>
+                        <div className="answer-container--option">
+                            <label htmlFor="">palabra 4.</label>
+                            <textarea type="text" placeholder="horno" onChange={(e) => setAnswer4(e.target.value)} />
+                        </div>
+                    </div>
+                    <div className="question-button">
+                        <button className="question-button--addQuestion">añadir pregunta</button>
+                    </div>
+                </form >
+            </div >
         </>
     )
 

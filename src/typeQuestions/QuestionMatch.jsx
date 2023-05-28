@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles/QuestionStyles.css"
 
 export default function QuestionMatch({ addQuestion, showNextQuestion }) {
 
@@ -33,50 +34,76 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
     }
 
     return (<>
-        <br />
-        <br />
-        <h3>Pregunta de emparejar</h3>
-        <br />
-        <p></p>
-        <p>Después de escribir tu pregunta, crea la opción con su pareja correcta</p>
-        <br />
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="">Pregunta:</label>
-            <input type="text" onChange={(e) => setText(e.target.value)} />
-            <br />
-            <br />
-            <label htmlFor="optionText1">(Opción/Pregunta):</label>
-            <input type="text" id="optionText1"
-                onChange={(e) => setOptionText1(e.target.value)} />
-            <label htmlFor="rigthAnswer1">Respuesta:</label>
-            <input type="text" id="answerOption1"
-                onChange={(e) => setAnswerOption1(e.target.value)}
-            />
-            <br />
-            <br />
-            <label htmlFor="optionText2">(Opción/Pregunta):</label>
-            <input type="text" id="optionText2"
-                onChange={(e) => setOptionText2(e.target.value)}
-            />
-            <label htmlFor="rigthAnswer2">Respuesta:</label>
-            <input type="text" id="answerOption2"
-                onChange={(e) => setAnswerOption2(e.target.value)}
-            />
-            <br />
-            <br />
-            <label htmlFor="optionText3">(Opción/Pregunta):</label>
-            <input type="text" id="optionText3"
-                onChange={(e) => setOptionText3(e.target.value)}
-            />
-            <label htmlFor="rigthAnswer3">Respuesta:</label>
-            <input type="text" id="answerOption3"
-                onChange={(e) => setAnswerOption3(e.target.value)}
-            />
-            <br />
-            <br />
-            <button>añadir pregunta</button>
-        </form>
-        <br />
+        <div className='card-container'>
+            <div className="question-title">
+                <h3 className='question-title'>Pregunta de emparejar</h3>
+                <p className='question-body'>Después de escribir tu pregunta, crea la opción con su pareja correcta</p>
+            </div>
+            <form className='form' onSubmit={handleSubmit}>
+
+                <div className='question-text--container'>
+                    <p>Tu mensaje:</p>
+                    <textarea placeholder="Ejemplo: Selecciona las opciones que correspondan!" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
+                </div>
+
+                <div className="question-answer--container">
+
+                    {/* First Item */}
+                    <div className="answer-container--holder">
+
+                        <div className="answer-container--option ">
+                            <label htmlFor="optionText1">(Opción/Pregunta):</label>
+                            <textarea id="optionText1" placeholder="Color del cielo" onChange={(e) => setOptionText1(e.target.value)} ></textarea>
+                        </div>
+
+                        <div className="answer-container--option">
+                            <label htmlFor="rigthAnswer1">Respuesta:</label>
+                            <textarea id="answerOption1" placeholder="Azul" onChange={(e) => setAnswerOption1(e.target.value)}></textarea>
+                        </div>
+                    </div>
+
+                    <hr />
+
+
+
+                    {/* Second Item */}
+                    <div className="answer-container--holder">
+
+                        <div className="answer-container--option">
+                            <label htmlFor="optionText2">(Opción/Pregunta):</label>
+                            <textarea id="optionText2" placeholder="Capital de Francia" onChange={(e) => setOptionText2(e.target.value)} ></textarea>
+                        </div>
+
+                        <div className="answer-container--option">
+                            <label htmlFor="rigthAnswer2">Respuesta:</label>
+                            <textarea id="answerOption2" placeholder="París" onChange={(e) => setAnswerOption2(e.target.value)} ></textarea>
+                        </div>
+
+                    </div>
+                    <hr />
+
+                    {/* Third Item */}
+                    <div className="answer-container--holder">
+
+                        <div className="answer-container--option">
+                            <label htmlFor="optionText3">(Opción/Pregunta):</label>
+                            <textarea id="optionText3" placeholder="Reconocído físico" onChange={(e) => setOptionText3(e.target.value)}></textarea>
+                        </div>
+
+                        <div className="answer-container--option">
+                            <label htmlFor="rigthAnswer3">Respuesta:</label>
+                            <textarea id="answerOption3" placeholder="Albert Einstein" onChange={(e) => setAnswerOption3(e.target.value)} ></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="question-button">
+                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                </div>
+            </form>
+        </div >
 
 
     </>)
