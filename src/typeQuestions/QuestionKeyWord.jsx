@@ -40,7 +40,7 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
                     <p className="question-body">Escriba palabras que deban ir en la respuesta</p>
                 </div>
                 <form onSubmit={handleSubmit}>
-                 
+
                     <div className="question-text--container">
                         <p>Pregunta: </p>
                         <textarea placeholder="Ejemplo: Escribe la receta para hacer un pastel" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
@@ -48,19 +48,19 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
 
                     <div className="question-answer--container">
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra 1.</label>
+                            <label htmlFor="">palabra</label>
                             <textarea type="text" placeholder="huevos" onChange={(e) => setAnswer1(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra 2.</label>
+                            <label htmlFor="">palabra</label>
                             <textarea type="text" placeholder="leche" onChange={(e) => setAnswer2(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra 3.</label>
+                            <label htmlFor="">palabra</label>
                             <textarea type="text" placeholder="arina" onChange={(e) => setAnswer3(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra 4.</label>
+                            <label htmlFor="">palabra</label>
                             <textarea type="text" placeholder="horno" onChange={(e) => setAnswer4(e.target.value)} />
                         </div>
                     </div>

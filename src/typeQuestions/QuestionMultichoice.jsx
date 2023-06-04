@@ -90,7 +90,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
                     {/* First Option */}
                     <div className="answer-container--option">
-                        <label htmlFor="">(Opción/Pregunta)</label>
+                        <label htmlFor="">Opción</label>
                         <textarea placeholder="Uno" onChange={(e) => setAnswer1(e.target.value)} />
                         <input type="checkbox" onChange={(e) => setIsAnswer1(e.target.value)} />
                     </div>
@@ -98,7 +98,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
                     {/* Second Option */}
                     <div className="answer-container--option">
-                        <label htmlFor="">(Opción/Pregunta) </label>
+                        <label htmlFor="">Opción</label>
                         <textarea placeholder="Tres" onChange={(e) => setAnswer2(e.target.value)} />
                         <input type="checkbox" onChange={(e) => setIsAnswer2(e.target.value)} />
                     </div>
@@ -106,7 +106,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
                     {/* Third Option */}
                     <div className="answer-container--option">
-                        <label htmlFor="">(Opción/Pregunta) </label>
+                        <label htmlFor="">Opción</label>
                         <textarea placeholder="Cuatro" onChange={(e) => setAnswer3(e.target.value)} />
                         <input type="checkbox" onChange={(e) => setIsAnswer3(e.target.value)} />
                     </div>
@@ -114,7 +114,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
                     {/* fourth option */}
                     <div className="answer-container--option">
-                        <label htmlFor="">(Opción/Pregunta) </label>
+                        <label htmlFor="">Opción</label>
                         <textarea placeholder="Cinco" onChange={(e) => setAnswer4(e.target.value)} />
                         <input type="checkbox" onChange={(e) => setIsAnswer4(e.target.value)} />
                     </div>

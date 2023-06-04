@@ -44,22 +44,22 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
 
                 <div className="question-answer--container">
                     <div className="answer-container--option">
-                        <label htmlFor="">Puesto: 1.</label>
+                        <label htmlFor="">1.</label>
                         <textarea placeholder="Mercurio" onChange={(e) => setSequenceText1(e.target.value)} />
                     </div>
 
                     <div className="answer-container--option">
-                        <label htmlFor="">Puesto: 2.</label>
+                        <label htmlFor="">2.</label>
                         <textarea placeholder="Venus" onChange={(e) => setSequenceText2(e.target.value)} />
                     </div>
 
                     <div className="answer-container--option">
-                        <label htmlFor="">Puesto: 3.</label>
+                        <label htmlFor="">3.</label>
                         <textarea placeholder="Tierra" onChange={(e) => setSequenceText3(e.target.value)} />
                     </div>
 
                     <div className="answer-container--option">
-                        <label htmlFor="">Puesto:  4.</label>
+                        <label htmlFor="">4.</label>
                         <textarea placeholder="Marte" onChange={(e) => setSequenceText4(e.target.value)} />
                     </div>
                 </div>
