@@ -9,6 +9,7 @@ export default function Body() {
     const [consecutive, setConsecutive] = useState(1)
     const [questions, setQuestions] = useState([])
     const [fileName, setFileName] = useState("")
+    const [questionCounter, setCounter] = useState(0);
 
     useEffect(() => {
     }, [])
@@ -30,6 +31,7 @@ export default function Body() {
      */
     function deleteQuestion(id) {
         setQuestions(questions.filter(q => q.id !== id))
+        setCounter(questionCounter - 1);
     }
 
     /**
@@ -41,6 +43,7 @@ export default function Body() {
         setConsecutive(newId)
         question.setId(newId)
         setQuestions([...questions, question])
+        setCounter(questionCounter + 1);
     }
 
     /**
@@ -48,6 +51,7 @@ export default function Body() {
      */
     function clearQuestions() {
         setQuestions([])
+        setFileName("")
     }
 
     /**
@@ -61,8 +65,6 @@ export default function Body() {
             alert("Nombra el archivo")
         } else {
             behavior(extension, questions, fileName)
-            // clearQuestions()
-            // document.getElementById("input-to-clear").value = "";
             // alert("Correcto")
         }
     }
@@ -71,7 +73,7 @@ export default function Body() {
         <>
             <div>
                 {/* Component with form for creating questions */}
-                <FormQuestion addQuestion={addQuestion} />
+                <FormQuestion addQuestion={addQuestion} counter={questionCounter} />
 
                 {/* Component that renders all questions */}
                 <ShowQuestions questions={questions} deleteQuestion={deleteQuestion} />
@@ -82,8 +84,9 @@ export default function Body() {
                     <form onSubmit={(e) => { e.preventDefault() }}>
                         <p style={{ fontSize: "1.6rem" }}>Nombra tu archivo: </p>
                         <br />
-                        <input id="input-to-clear"
-                            placeholder="Nombre del archivo"
+                        <input
+                            value={fileName}
+                            placeholder="Nombre del archivo"    
                             type="text" onChange={(e) => { setFileName(e.target.value); }} />
                         <br />
                         <br />
