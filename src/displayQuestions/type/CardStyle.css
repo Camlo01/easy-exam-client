@@ -1,0 +1,125 @@
+.questions-cards-container {
+    background-color: rgb(212, 212, 212);
+    padding: 15px;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+
+/* General Styles for cards */
+
+.question-card {
+    margin: 10px;
+    border-radius: 15px;
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* For Color */
+.green-card {
+    background-color: rgb(60, 163, 60);
+    border: 7px solid #1b6102;
+}
+
+.blue-card {
+    background-color: rgba(67, 128, 219, 0.979);
+    border: 7px solid #1a2355;
+}
+
+.purple-card {
+    background-color: rgba(214, 180, 218, 0.979);
+    border: 7px solid #59035c;
+}
+
+.yellow-card {
+    background-color: rgba(238, 232, 180, 0.979);
+    border: 7px solid #8a6d1c;
+}
+
+.red-card {
+    background-color: rgba(238, 176, 176, 0.979);
+    border: 7px solid #441e1e;
+}
+
+
+/* Card Text Styles */
+
+.question-card h2 {
+    font-size: 1.6rem;
+    margin: 0 auto 10px;
+}
+
+/* Style for answers */
+
+.question-card p {
+    font-size: 1.6rem;
+    margin: 0 auto 30px;
+}
+
+.multichoice-option {
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 0 auto 15px;
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 1px 1px 3px rgb(133, 130, 130);
+}
+
+.answer-rigth {
+    color: green;
+}
+
+.answer-wrong {
+    color: rgb(241, 33, 33);
+}
+
+
+
+/* Styles for button */
+
+.question-card button {
+    color: rgb(236, 211, 211);
+    background-color: rgb(175, 0, 0);
+    font-weight: 800;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 767px) {
+    .questions-cards-container {
+        background-color: rgb(212, 212, 212);
+        padding: 15px;
+        display: flex;
+        max-height: 380px;
+        /* justify-content: center; */
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90vw;
+        /* offset-x | offset-y | blur-radius | color */
+        box-shadow: 2px 3px 10px black;
+        margin: 0 auto;
+        border-radius: 25px;
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+
+    }
+
+    .card-button--container {
+        display: flex;
+        justify-content: end;
+    }
+
+    .question-card button {
+        color: rgb(236, 211, 211);
+        font-size: 1.2rem;
+        background-color: rgb(175, 0, 0);
+        font-weight: 800;
+        padding: 8px;
+        border-radius: 8px;
+        width: 120px;
+    }
+}

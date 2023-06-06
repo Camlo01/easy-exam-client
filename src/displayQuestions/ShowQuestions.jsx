@@ -1,25 +1,25 @@
 import './ShowQuestions.css'
 
+import FreeTextCard from './type/FreeTextCard'
+import MatchCard from './type/MatchCard'
+import MultichoiceCard from './type/MultichoiceCard'
+import SequenceCard from './type/SequenceCard'
+import KeywordCard from './type/KeywordCard'
+
 export default function ShowQuestions({ questions, deleteQuestion }) {
 
     if (questions.length === 0) {
         return WhenThereIsNoQuestion()
     }
-
-    return questions.map((question, i) => (
+    let cards = questions.map((question, i) => (
         <div key={i}>
-            <hr />
-            <br />
-            <p>Pregunta #{i + 1}</p>
-            <br />
-            <p>Tipo: {question.questionType ?? "UNDEFINED"}</p>
-            <p>Pregunta: {question.questionText ?? "UNDEFINED"}</p>
-            <button onClick={() => deleteQuestion(question.id ?? 99)}>Eliminar</button>
-            <br />
-            <br />
+            {DisplayQuestionInCard(question, deleteQuestion, i)}
         </div>
     ))
-
+    return (
+        <div className='questions-cards-container'>
+            {cards}
+        </div>)
 }
 
 /**
@@ -35,4 +35,26 @@ function WhenThereIsNoQuestion() {
             </div>
         </>
     )
+}
+
+function DisplayQuestionInCard(question, deleteQuestion, i) {
+
+    let id = i + 1;
+
+    switch (question.type) {
+        case "FREETEXT":
+            return <FreeTextCard question={question} deleteQuestion={deleteQuestion} i={id} />
+        case "MATCH":
+            return <MatchCard question={question} deleteQuestion={deleteQuestion} i={id} />
+        case "MULTICHOICE":
+            return <MultichoiceCard question={question} deleteQuestion={deleteQuestion} i={id}/>
+        case "SEQUENCE":
+            return <SequenceCard question={question} deleteQuestion={deleteQuestion} i={id} />
+        case "KEYWORD":
+            return <KeywordCard question={question} deleteQuestion={deleteQuestion} i={id} />
+        default:
+            alert("Comunicate con el administrador para reportar un fallo")
+            break;
+    }
+
 }
