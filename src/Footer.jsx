@@ -1,5 +1,5 @@
 export default function Footer() {
-    console.log("Versión de aplicación 1.2  28/Mayo/2023")
+    console.log("Versión de aplicación 2.0  5/Junio/2023")
     console.log("Autor: Camilo A. Beltrán")
     return (
         <>
@@ -7,7 +7,7 @@ export default function Footer() {
                 <small>
                     Herramienta de creación de examenes
                     <br />
-                    versión 1.2
+                    versión 2.0
                     {/* &copy; Camilo Beltrán  */}
                     {/* Autor: Camilo Beltrán */}
                     <br />
