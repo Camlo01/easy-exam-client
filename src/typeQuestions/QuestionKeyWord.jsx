@@ -27,8 +27,20 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
                 this.id = n
             }
         }
-        addQuestion(newQuestionKeyWord)
-        showNextQuestion()
+
+
+        if (newQuestionKeyWord.questionText.length > 0) {
+
+            if (atLeast2Words([answer1, answer2, answer3, answer4])) {
+                addQuestion(newQuestionKeyWord)
+                showNextQuestion()
+            } else {
+                alert("Debe haber al menos una respuesta")
+            }
+
+        } else {
+            alert("Debes escribir tu pregunta")
+        }
 
     }
 
@@ -72,4 +84,16 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
         </>
     )
 
+}
+function atLeast2Words(words) {
+    let countWords = 0;
+
+    for (let i = 0; i < words.length; i++) {
+
+        if (words[i].length > 0) {
+            countWords++
+        }
+
+    }
+    return (countWords >= 1)
 }

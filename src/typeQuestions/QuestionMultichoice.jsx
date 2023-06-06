@@ -6,13 +6,28 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
     // state variables to be used in the question object
     const [questionText, setText] = useState("");
     const [answer1, setAnswer1] = useState("")
-    const [isAnswer1, setIsAnswer1] = useState("")
+    const [isAnswer1, setIsAnswer1] = useState(false)
     const [answer2, setAnswer2] = useState("")
-    const [isAnswer2, setIsAnswer2] = useState("")
+    const [isAnswer2, setIsAnswer2] = useState(false)
     const [answer3, setAnswer3] = useState("")
-    const [isAnswer3, setIsAnswer3] = useState("")
+    const [isAnswer3, setIsAnswer3] = useState(false)
     const [answer4, setAnswer4] = useState("")
-    const [isAnswer4, setIsAnswer4] = useState("")
+    const [isAnswer4, setIsAnswer4] = useState(false)
+
+    const handleCheckboxChange1 = (event) => {
+        setIsAnswer1(event.target.checked);
+    };
+    const handleCheckboxChange2 = (event) => {
+        setIsAnswer2(event.target.checked);
+    };
+
+    const handleCheckboxChange3 = (event) => {
+        setIsAnswer3(event.target.checked);
+    };
+
+    const handleCheckboxChange4 = (event) => {
+        setIsAnswer4(event.target.checked);
+    };
 
 
     const handleSubmit = (e) => {
@@ -36,15 +51,21 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
             }
         }
 
-        if (questionText.length == 0) {
-            alert("Debes formular tu pregunta")
-        } else {
+        if (newQuestionMultichoice.questionText.length > 0) {
+
             if (anyCorrectOption(newQuestionMultichoice)) {
-                addQuestion(newQuestionMultichoice)
-                showNextQuestion();
+
+                if (atLeast2Answers([answer1, answer2, answer3, answer4])) {
+                    addQuestion(newQuestionMultichoice)
+                    showNextQuestion();
+                } else {
+                    alert("Debes escribir al menos dos opciones")
+                }
             } else {
                 alert("Selecciona al menos una respuesta como correcta")
             }
+        } else {
+            alert("Debes formular tu pregunta")
         }
     }
 
@@ -69,7 +90,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
      * @returns String of "TRUE" if the received value is 'on', otherwise it will default to "FALSE"
      */
     function defineValue(value) {
-        return (value == "on") ? "TRUE" : "FALSE";
+        return (value == true) ? "TRUE" : "FALSE";
     }
 
 
@@ -92,31 +113,31 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
                         <textarea placeholder="Uno" onChange={(e) => setAnswer1(e.target.value)} />
-                        <input type="checkbox" onChange={(e) => setIsAnswer1(e.target.value)} />
+                        <input type="checkbox" onChange={handleCheckboxChange1} />
                     </div>
                     <hr />
 
                     {/* Second Option */}
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
-                        <textarea placeholder="Tres" onChange={(e) => setAnswer2(e.target.value)} />
-                        <input type="checkbox" onChange={(e) => setIsAnswer2(e.target.value)} />
+                        <textarea placeholder="Dos" onChange={(e) => setAnswer2(e.target.value)} />
+                        <input type="checkbox" onChange={handleCheckboxChange2} />
                     </div>
                     <hr />
 
                     {/* Third Option */}
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
-                        <textarea placeholder="Cuatro" onChange={(e) => setAnswer3(e.target.value)} />
-                        <input type="checkbox" onChange={(e) => setIsAnswer3(e.target.value)} />
+                        <textarea placeholder="Tres" onChange={(e) => setAnswer3(e.target.value)} />
+                        <input type="checkbox" onChange={handleCheckboxChange3} />
                     </div>
                     <hr />
 
                     {/* fourth option */}
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
-                        <textarea placeholder="Cinco" onChange={(e) => setAnswer4(e.target.value)} />
-                        <input type="checkbox" onChange={(e) => setIsAnswer4(e.target.value)} />
+                        <textarea placeholder="Cuatro" onChange={(e) => setAnswer4(e.target.value)} />
+                        <input type="checkbox" onChange={handleCheckboxChange4} />
                     </div>
                 </div>
                 <div className="question-button">
@@ -127,4 +148,16 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
     </>
     )
 
+}
+
+function atLeast2Answers(options) {
+    let countOptionsNotEmpty = 0;
+    for (let i = 0; i < options.length; i++) {
+
+        if (options[i].length) {
+            countOptionsNotEmpty++;
+        }
+    }
+
+    return (countOptionsNotEmpty >= 2)
 }

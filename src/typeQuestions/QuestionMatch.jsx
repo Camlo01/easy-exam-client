@@ -29,8 +29,18 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
                 this.id = n
             }
         }
-        addQuestion(newQuestionMatch)
-        showNextQuestion()
+
+        if (newQuestionMatch.questionText.length > 0) {
+            if (fieldsAreValid([optionText1, answerOption1, optionText2, answerOption2, optionText3, answerOption3])) {
+                addQuestion(newQuestionMatch)
+                showNextQuestion()
+            }
+            else {
+                alert("Debes escribir al menos dos campos")
+            }
+        } else {
+            alert("Debes escribir tu texto")
+        }
     }
 
     return (<>
@@ -107,4 +117,23 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
 
 
     </>)
+}
+
+function fieldsAreValid(options) {
+    let answersNotEmptyCounter = 0;
+
+    // Validar al menos dos respuestas
+    for (let i = 0; i < options.length - 2; i += 2) {
+
+        console.log(options[i].length > 1 && options[i + 1])
+        if (options[i].length > 1 && options[i + 1]) {
+            answersNotEmptyCounter++;
+        }
+    }
+
+    if (answersNotEmptyCounter >= 2) {
+        return true;
+    }
+    return false;
+
 }

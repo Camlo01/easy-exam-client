@@ -25,9 +25,19 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
             }
         }
 
-        addQuestion(newQuestionSequence)
-        showNextQuestion()
+        if (newQuestionSequence.questionText.length > 1) {
 
+            if (atLeast2Options([sequenceText1, sequenceText2, sequenceText3, sequenceText4])) {
+
+                addQuestion(newQuestionSequence)
+                showNextQuestion()
+            } else {
+                alert("Deben haber al menos dos opciones")
+            }
+        }
+        else {
+            alert("Debes crear una pregunta")
+        }
     }
 
     return (<>
@@ -70,4 +80,17 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
             </form>
         </div>
     </>)
+}
+
+function atLeast2Options(options) {
+    let countOptionsNotEmpty = 0;
+    for (let i = 0; i < options.length; i++) {
+
+        if (options[i].length > 0) {
+            countOptionsNotEmpty++
+        }
+    }
+
+    return (countOptionsNotEmpty >= 2)
+
 }

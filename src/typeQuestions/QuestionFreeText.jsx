@@ -17,8 +17,14 @@ export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
                 this.id = n
             }
         }
-        addQuestion(newQuestionFreeText)
-        showNextQuestion()
+
+        if (newQuestionFreeText.questionText.length > 0) {
+            addQuestion(newQuestionFreeText)
+            showNextQuestion()
+        } else {
+            alert("Debes formular tu pregunta")
+        }
+
     }
 
     return (<>
