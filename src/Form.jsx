@@ -7,7 +7,7 @@ import QuestionMultichoice from './typeQuestions/QuestionMultichoice'
 import QuestionSequence from './typeQuestions/QuestionSequence'
 import QuestionKeyWord from './typeQuestions/QuestionKeyWord'
 
-export default function FormQuestion({ addQuestion }) {
+export default function FormQuestion({ addQuestion, counter }) {
 
     const [selectedOption, setSelectedOption] = useState("");
 
@@ -31,6 +31,9 @@ export default function FormQuestion({ addQuestion }) {
                     <option value="SEQUENCE">Secuencia</option>
                     <option value="KEYWORD">palabras claves</option>
                 </select >
+                <br />
+                <br />
+                <p>Total de preguntas: {counter} </p>
             </>
         )
     }
