@@ -1,5 +1,5 @@
 
-const URLHost = "http://3.14.27.129:8080/questionnaire";
+const URLHost = "http://3.14.27.129:8080/easy-exam/questionnaire";
 /**
  * Descarga un archivo de excel de extensión XSL
  * @param {Array} questions - Array de objetos de preguntas 
