@@ -52,6 +52,7 @@ export default function Body() {
     function clearQuestions() {
         setQuestions([])
         setFileName("")
+        setCounter(0)
     }
 
     /**
