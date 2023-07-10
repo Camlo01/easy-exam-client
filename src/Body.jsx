@@ -83,21 +83,21 @@ export default function Body() {
                 <br />
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
-                        <p style={{ fontSize: "1.6rem" }}>Nombra tu archivo: </p>
+                        <p style={{ fontSize: "1.6rem" }}>Nombre examen: </p>
                         <br />
                         <input
+                            style={{ fontSize: '1.3rem' }}
                             value={fileName}
-                            placeholder="Nombre del archivo"    
+                            placeholder="Nombre del archivo"
                             type="text" onChange={(e) => { setFileName(e.target.value); }} />
                         <br />
                         <br />
-                        <p style={{ fontSize: "1.5rem" }}><b>Formato</b> de descarga:</p>
-                        <button style={{ backgroundColor: "rgb(255, 68, 68)", borderRadius: "12px", fontWeight: 800 }} type="submit" onClick={() => exportFile("XLS")}> Excel</button>
-                        <button style={{ backgroundColor: "rgb(51, 119, 13)", borderRadius: "12px", color: "white", fontWeight: 800 }} type="submit" onClick={() => exportFile("CSV")}>CSV</button>
+                        <p style={{ fontSize: "1.6rem", alignSelf: 'center' }}>¿Qué deseas hacer?</p>
+                        <br />
+                        <button className="button-export" type="submit" onClick={() => exportFile("CSV")}>Generar Examen</button>
                         <br />
                         <br />
-                        <br />
-                        <button style={{ borderRadius: "12px" }} type="submit" onClick={() => clearQuestions()}>Limpiar preguntas</button>
+                        <button className="button-clear" type="submit" onClick={() => clearQuestions()}>Borrar preguntas</button>
                     </form>
                 </div>
             </div >
