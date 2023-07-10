@@ -35,6 +35,7 @@ export function generateFileAsExcel(questions, nameFile) {
  */
 export function generateFileAsCSV(questions, nameFile) {
 
+    let statusCode;
     const URL = `${URLHost}/document-csv`
 
     fetch(URL, {
@@ -42,7 +43,10 @@ export function generateFileAsCSV(questions, nameFile) {
         body: JSON.stringify(questions),
         headers: { "Content-type": "application/json; charset=utf-8" },
     })
-        .then(response => response.blob())
+        .then(response => {
+            statusCode = response.status;
+            return response.blob();
+        })
         .then(blob => {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
@@ -50,8 +54,32 @@ export function generateFileAsCSV(questions, nameFile) {
             a.download = `${nameFile}.csv`;
             document.body.appendChild(a);
             a.click();
+            setTimeout(() => {
+                showDownloadStatus(statusCode);
+            }, 500);
         })
         .catch(error => {
             console.error('Error:', error);
+            showMessage("Hubo un problema! intenta nuevamente nuevamente y reporta al administrador")
         });
+}
+
+/**
+ * Method in charge on show the status of the download
+ * @param {int} statusCode 
+ */
+function showDownloadStatus(statusCode) {
+    if (statusCode == 200) {
+        showMessage('Se descargó el examen correctamente')
+    } else {
+        showMessage("Hubo un problema! intenta nuevamente nuevamente y reporta al administrador")
+    }
+}
+
+/**
+ * Fuction in charge to show a message in an alert
+ * @param {String} message 
+ */
+function showMessage(message) {
+    alert(message)
 }
