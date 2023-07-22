@@ -1,16 +1,11 @@
 import React from 'react'
-import Header from './Header'
-import Info from './Info'
-import Body from './Body'
-import Footer from './Footer'
+import ExamGenerator from './pages/examGenerator'
 
 export default function App() {
+
     return (
         <>
-            <Header />
-            <Info />
-            <Body />
-            <Footer />
+            <ExamGenerator />
         </>
     )
 }
