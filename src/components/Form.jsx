@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import "./Form.css";
-import QuestionFreeText from './typeQuestions/QuestionFreeText'
-import QuestionMatch from './typeQuestions/QuestionMatch'
-import QuestionMultichoice from './typeQuestions/QuestionMultichoice'
-import QuestionSequence from './typeQuestions/QuestionSequence'
-import QuestionKeyWord from './typeQuestions/QuestionKeyWord'
+import QuestionFreeText from "../resources/typeQuestions/QuestionFreeText"
+import QuestionMatch from "../resources/typeQuestions/QuestionMatch"
+import QuestionMultichoice from "../resources/typeQuestions/QuestionMultichoice"
+import QuestionSequence from "../resources/typeQuestions/QuestionSequence"
+import QuestionKeyWord from "../resources/typeQuestions/QuestionKeyWord"
 
 export default function FormQuestion({ addQuestion, counter }) {
 

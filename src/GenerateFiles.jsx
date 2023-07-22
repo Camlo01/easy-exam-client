@@ -53,7 +53,7 @@ export function generateFileAsCSV(questions, nameFile) {
             a.href = url;
             a.download = `${nameFile}.csv`;
             document.body.appendChild(a);
-            a.click();
+            a.click();``
             setTimeout(() => {
                 showDownloadStatus(statusCode);
             }, 500);

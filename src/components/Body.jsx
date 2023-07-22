@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./Body.css"
 import FormQuestion from "./Form";
-import behavior from "./generateButtonsBehavior";
-import ShowQuestions from './displayQuestions/ShowQuestions'
+import behavior from "../generateButtonsBehavior";
+import ShowQuestions from '../displayQuestions/ShowQuestions'
 
 export default function Body() {
 
