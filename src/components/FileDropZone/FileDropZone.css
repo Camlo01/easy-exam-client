@@ -1,0 +1,28 @@
+`/* Estilos básicos para el contenedor de la zona de arrastre */
+.dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Estilos para cuando el usuario está arrastrando un archivo sobre la zona de arrastre */
+  .dropzone.drag-active {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+  
+  /* Estilos para el contenido dentro de la zona de arrastre */
+  .dropzone-content {
+    text-align: center;
+  }
+  
+  /* Estilos para el contenido dentro de la zona de arrastre cuando está activa */
+  .dropzone.drag-active .dropzone-content {
+    color: #007bff;
+  }
+  
