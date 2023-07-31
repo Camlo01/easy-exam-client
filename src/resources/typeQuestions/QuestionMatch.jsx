@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./styles/QuestionStyles.css"
+import validateNonRepeatFields from "../Util";
 
 export default function QuestionMatch({ addQuestion, showNextQuestion }) {
 
@@ -30,10 +31,18 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
             }
         }
 
+        const options = [optionText1, answerOption1, optionText2, answerOption2, optionText3, answerOption3];
+
         if (newQuestionMatch.questionText.length > 0) {
-            if (fieldsAreValid([optionText1, answerOption1, optionText2, answerOption2, optionText3, answerOption3])) {
+
+            if (fieldsAreValid(options)) {
+
+                if (validateNonRepeatFields(options)) {
                 addQuestion(newQuestionMatch)
-                showNextQuestion()
+                    showNextQuestion()
+                } else {
+                    alert("No pueden haber valores repetidos")
+                }
             }
             else {
                 alert("Debes escribir al menos dos campos")
@@ -123,10 +132,9 @@ function fieldsAreValid(options) {
     let answersNotEmptyCounter = 0;
 
     // Validar al menos dos respuestas
-    for (let i = 0; i < options.length - 2; i += 2) {
+    for (let i = 0; i < options.length; i += 2) {
 
-        console.log(options[i].length > 1 && options[i + 1])
-        if (options[i].length > 1 && options[i + 1]) {
+        if (options[i].length >= 1 && options[i + 1].length >= 1) {
             answersNotEmptyCounter++;
         }
     }
