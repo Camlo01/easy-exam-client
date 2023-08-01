@@ -24,5 +24,10 @@ export default function validateNonRepeatFields(arr) {
         }
     }
 
+    // Show that exist repeat fields
+    if (isAnyValueRepeat) {
+        alert("No pueden haber opciones repetidas");
+    }
+
     return !(isAnyValueRepeat);
 }
