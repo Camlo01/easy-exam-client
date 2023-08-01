@@ -38,10 +38,8 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
             if (fieldsAreValid(options)) {
 
                 if (validateNonRepeatFields(options)) {
-                addQuestion(newQuestionMatch)
+                    addQuestion(newQuestionMatch)
                     showNextQuestion()
-                } else {
-                    alert("No pueden haber valores repetidos")
                 }
             }
             else {
