@@ -1,5 +1,6 @@
 import { useState } from "react"
 import './styles/QuestionStyles.css'
+import validateNonRepeatFields from "../Util";
 
 export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
 
@@ -51,13 +52,20 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
             }
         }
 
+        const options = [answer1, answer2, answer3, answer4]
+
         if (newQuestionMultichoice.questionText.length > 0) {
 
             if (anyCorrectOption(newQuestionMultichoice)) {
 
-                if (atLeast2Answers([answer1, answer2, answer3, answer4])) {
-                    addQuestion(newQuestionMultichoice)
-                    showNextQuestion();
+                if (atLeast2Answers(options)) {
+
+                    if (validateNonRepeatFields(options)) {
+
+                        addQuestion(newQuestionMultichoice)
+                        showNextQuestion();
+                    }
+
                 } else {
                     alert("Debes escribir al menos dos opciones")
                 }

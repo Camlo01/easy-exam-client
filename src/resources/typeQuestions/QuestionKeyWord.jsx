@@ -1,5 +1,6 @@
 import { useState } from "react"
 import './styles/QuestionStyles.css'
+import validateNonRepeatFields from "../Util"
 
 export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
 
@@ -28,12 +29,17 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
             }
         }
 
+        const options = [answer1, answer2, answer3, answer4];
 
         if (newQuestionKeyWord.questionText.length > 0) {
 
-            if (atLeast2Words([answer1, answer2, answer3, answer4])) {
-                addQuestion(newQuestionKeyWord)
-                showNextQuestion()
+            if (atLeast2Words(options)) {
+
+                if (validateNonRepeatFields(options)) {
+
+                    addQuestion(newQuestionKeyWord)
+                    showNextQuestion()
+                }
             } else {
                 alert("Debe haber al menos una respuesta")
             }
