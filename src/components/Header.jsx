@@ -9,7 +9,7 @@ export default function Header() {
                 <h1>Website easy-exam</h1>
             </div>
 
-            <div>
+            <div className='navButtons'>
                 <Link to={"/easy-exam-client/"}>
                     <button className="yellow-button">Generar exámenes</button>
                 </Link>
