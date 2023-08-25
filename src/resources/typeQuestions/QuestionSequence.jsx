@@ -1,4 +1,5 @@
 import { useState } from "react"
+import validateNonRepeatFields from "../Util"
 
 export default function QuestionSequence({ addQuestion, showNextQuestion }) {
 
@@ -25,12 +26,17 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
             }
         }
 
+        const options = [sequenceText1, sequenceText2, sequenceText3, sequenceText4];
+
         if (newQuestionSequence.questionText.length > 1) {
 
-            if (atLeast2Options([sequenceText1, sequenceText2, sequenceText3, sequenceText4])) {
+            if (atLeast2Options(options)) {
 
-                addQuestion(newQuestionSequence)
-                showNextQuestion()
+                if (validateNonRepeatFields(options)) {
+                    addQuestion(newQuestionSequence)
+                    showNextQuestion()
+                }
+
             } else {
                 alert("Deben haber al menos dos opciones")
             }
