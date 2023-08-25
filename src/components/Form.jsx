@@ -29,7 +29,7 @@ export default function FormQuestion({ addQuestion, counter }) {
                     <option value="MATCH">Emparejar</option>
                     <option value="MULTICHOICE">Selección múltiple</option>
                     <option value="SEQUENCE">Secuencia</option>
-                    <option value="KEYWORD">palabras claves</option>
+                    <option value="KEYWORD">Palabras claves</option>
                 </select >
                 <br />
                 <br />
