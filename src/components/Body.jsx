@@ -83,7 +83,7 @@ export default function Body() {
                 <br />
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
-                        <p>(Si es un documento de Isolución escribir el Código correspondiente)</p>
+                        <p className="body-botton-plainText">(Si es un documento de <a href="http://isolucion/Isolucion/PaginaLogin.aspx" style={{color:"orange"}}>Isolución</a> escribir el Código correspondiente)</p>
                         <br />
                         <p style={{ fontSize: "1.6rem" }}>Nombre archivo: </p>
                         <br />
@@ -92,9 +92,9 @@ export default function Body() {
                             value={fileName}
                             placeholder="Nombre del archivo"
                             type="text" onChange={(e) => { setFileName(e.target.value); }} />
-                            <br />
-                            <br />
-                        <p>Da clic en "Generar Examen" y graba el documento en tu equipo. Recuerda que este archivo debes enviarlo al correo <p className="">aprendizajecolombia@gerdaudiaco.com</p></p>
+                        <br />
+                        <br />
+                        <p className="body-botton-plainText">Da clic en "Generar Examen" y graba el documento en tu equipo. Recuerda que este archivo debes enviarlo al correo <u>aprendizajecolombia@gerdaudiaco.com</u></p>
                         <br />
                         <p style={{ fontSize: "1.6rem", alignSelf: 'center' }}>¿Qué deseas hacer?</p>
                         <br />
