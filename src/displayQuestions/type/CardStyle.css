@@ -76,14 +76,19 @@
 
 
 
-/* Styles for button */
+/* Styles for delete button */
 
 .question-card button {
     color: rgb(236, 211, 211);
     background-color: rgb(175, 0, 0);
     font-weight: 800;
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 8px;
+    transition: all 0.1s;
+}
+
+.question-card button:hover {
+    background-color: red;
 }
 
 
