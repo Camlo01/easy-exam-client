@@ -3,11 +3,11 @@ export default function Footer() {
     console.log("Autor: Camilo A. Beltrán")
     return (
         <>
-            <footer>
+            <footer style={{margin: "0 auto", maxWidth: "700px", textAlign:"center"}}>
                 <small>
-                    Herramienta de creación de examenes
+                    Herramienta de creación de examenes | aprendizajecolombia@gerdaudiaco.com
                     <br />
-                    versión 3.0
+                    versión 4.0 | 28/Ago/2023
                     {/* &copy; Camilo Beltrán  */}
                     {/* Autor: Camilo Beltrán */}
                     <br />
