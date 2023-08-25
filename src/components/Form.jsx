@@ -22,9 +22,9 @@ export default function FormQuestion({ addQuestion, counter }) {
     function ConfigQuestion() {
 
         return (
-            <>
-                <select name="type-question" onChange={handleSelectChange}>
-                    <option value="NULL">-- Tipo de pregunta --</option>
+            <div className="form-addNewQuestion">
+                <select className="form-addQuestion" name="type-question" onChange={handleSelectChange}>
+                    <option value="NULL" >-- Tipo de pregunta --</option>
                     <option value="FREETEXT">Texto libre</option>
                     <option value="MATCH">Emparejar</option>
                     <option value="MULTICHOICE">Selección múltiple</option>
@@ -33,8 +33,8 @@ export default function FormQuestion({ addQuestion, counter }) {
                 </select >
                 <br />
                 <br />
-                <p>Total de preguntas: {counter} </p>
-            </>
+                <p className="form-counter">Total de preguntas: <b>{counter}</b> </p>
+            </div>
         )
     }
 
@@ -66,14 +66,14 @@ export default function FormQuestion({ addQuestion, counter }) {
                 </>)
             default:
                 return (
-                    <>
+                    <div className="form-default">
                         <br />
                         <br />
                         <p>Acá encontrarás el campo según corresponda al tipo de pregunta</p>
                         <br />
                         <h3>¡Agrega una pregunta!</h3>
                         <br />
-                    </>
+                    </div>
                 )
         }
     }
