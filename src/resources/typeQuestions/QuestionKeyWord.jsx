@@ -54,7 +54,7 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
         <>
             <div className="card-container">
                 <div className="question-title">
-                    <h3 className="question-title">Pregunta de palabras claves</h3>
+                    <h3 className="question-title">Palabra Clave</h3>
                     <p className="question-body">Escriba palabras que deban ir en la respuesta</p>
                 </div>
                 <form onSubmit={handleSubmit}>
@@ -66,24 +66,24 @@ export default function QuestionKeyWord({ addQuestion, showNextQuestion }) {
 
                     <div className="question-answer--container">
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra</label>
+                            <label htmlFor="">PALABRA</label>
                             <textarea type="text" placeholder="huevos" onChange={(e) => setAnswer1(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra</label>
+                            <label htmlFor="">PALABRA</label>
                             <textarea type="text" placeholder="leche" onChange={(e) => setAnswer2(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra</label>
-                            <textarea type="text" placeholder="arina" onChange={(e) => setAnswer3(e.target.value)} />
+                            <label htmlFor="">PALABRA</label>
+                            <textarea type="text" placeholder="Harina" onChange={(e) => setAnswer3(e.target.value)} />
                         </div>
                         <div className="answer-container--option">
-                            <label htmlFor="">palabra</label>
+                            <label htmlFor="">PALABRA</label>
                             <textarea type="text" placeholder="horno" onChange={(e) => setAnswer4(e.target.value)} />
                         </div>
                     </div>
                     <div className="question-button">
-                        <button className="question-button--addQuestion">añadir pregunta</button>
+                        <button className="question-button--addQuestion">Añadir</button>
                     </div>
                 </form >
             </div >

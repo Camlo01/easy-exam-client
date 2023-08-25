@@ -49,8 +49,8 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
     return (<>
         <div className='card-container'>
             <div className="question-title">
-                <h3 className=''>Pregunta de secuencia</h3>
-                <p className=''>Escriba las opciones en el orden correcto </p>
+                <h3 className=''>Secuencia</h3>
+                <p className=''>Escriba las opciones en el orden correcto, el sistema las mostrará al estudiante en desorden</p>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='question-text--container'>
@@ -81,7 +81,7 @@ export default function QuestionSequence({ addQuestion, showNextQuestion }) {
                 </div>
 
                 <div className="question-button">
-                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                    <button className='question-button--addQuestion'>Añadir</button>
                 </div>
             </form>
         </div>

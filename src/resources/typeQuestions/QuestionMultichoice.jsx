@@ -105,8 +105,9 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
     return (<>
         <div className='card-container'>
             <div className="question-title">
-                <h3 className='question-title'>Pregunta de selcción múltiple</h3>
-                <p className='question-body'>Marca las opciones correctas de tu pregunta</p>
+                <h3 className='question-title'>Selección Múltiple</h3>
+                <p className='question-body'>(Permite seleccionar una o más respuestas predeterminadas)</p>
+                <p className='question-body'>Marca las opciones correctas de tu pregunta en las casillas del lado derecho</p>
             </div>
             <form onSubmit={handleSubmit}>
 
@@ -149,7 +150,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     </div>
                 </div>
                 <div className="question-button">
-                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                    <button className='question-button--addQuestion'>Añadir</button>
                 </div>
             </form >
         </div >

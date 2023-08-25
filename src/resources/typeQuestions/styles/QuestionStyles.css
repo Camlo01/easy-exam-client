@@ -173,6 +173,7 @@ form {
     font-size: 1.4rem;
     box-shadow: 0px 2px 10px rgb(71, 71, 71);
     border-color: rgb(0, 73, 10);
+    padding: 0 20px;
 }
 
 .question-button--addQuestion:hover {

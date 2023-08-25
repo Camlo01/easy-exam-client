@@ -3,7 +3,7 @@ import "./styles/QuestionStyles.css"
 import validateNonRepeatFields from "../Util";
 
 export default function QuestionMatch({ addQuestion, showNextQuestion }) {
-
+    
     const [text, setText] = useState("");
     const [optionText1, setOptionText1] = useState("")
     const [answerOption1, setAnswerOption1] = useState("")
@@ -53,14 +53,14 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
     return (<>
         <div className='card-container'>
             <div className="question-title">
-                <h3 className='question-title'>Pregunta de emparejar</h3>
-                <p className='question-body'>Después de escribir tu pregunta, crea la opción con su pareja correcta</p>
+                <h3 className='question-title'>Emparejar</h3>
+                <p className='question-body'>Después de escribir el enunciado, crea la opción con su pareja correcta</p>
             </div>
             <form className='form' onSubmit={handleSubmit}>
 
                 <div className='question-text--container'>
-                    <p>Tu mensaje:</p>
-                    <textarea placeholder="Ejemplo: Selecciona las opciones que correspondan!" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
+                    <p>Enunciado:</p>
+                    <textarea placeholder="Ejemplo: ¡Selecciona las opciones que correspondan!" cols="45" rows="2" onChange={(e) => setText(e.target.value)}></textarea>
                 </div>
 
                 <div className="question-answer--container">
@@ -69,7 +69,7 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--holder">
 
                         <div className="answer-container--option ">
-                            <label htmlFor="optionText1">(Opción/Pregunta):</label>
+                            <label htmlFor="optionText1">Opción/Pregunta:</label>
                             <textarea id="optionText1" placeholder="Color del cielo" onChange={(e) => setOptionText1(e.target.value)} ></textarea>
                         </div>
 
@@ -81,13 +81,11 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
 
                     <hr />
 
-
-
                     {/* Second Item */}
                     <div className="answer-container--holder">
 
                         <div className="answer-container--option">
-                            <label htmlFor="optionText2">(Opción/Pregunta):</label>
+                            <label htmlFor="optionText2">Opción/Pregunta:</label>
                             <textarea id="optionText2" placeholder="Capital de Francia" onChange={(e) => setOptionText2(e.target.value)} ></textarea>
                         </div>
 
@@ -103,7 +101,7 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--holder">
 
                         <div className="answer-container--option">
-                            <label htmlFor="optionText3">(Opción/Pregunta):</label>
+                            <label htmlFor="optionText3">Opción/Pregunta:</label>
                             <textarea id="optionText3" placeholder="Reconocído físico" onChange={(e) => setOptionText3(e.target.value)}></textarea>
                         </div>
 
@@ -117,7 +115,7 @@ export default function QuestionMatch({ addQuestion, showNextQuestion }) {
                 </div>
 
                 <div className="question-button">
-                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                    <button className='question-button--addQuestion'>Añadir</button>
                 </div>
             </form>
         </div >

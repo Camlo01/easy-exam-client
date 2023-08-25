@@ -32,8 +32,9 @@ export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
 
             <div className='question-title'>
                 <h3 >Texto Libre</h3>
+                <p>Permite escribir la respuesta como texo</p>
                 <p className='question-annotation'><b>¡IMPORTANTE!</b></p>
-                <p >Este tipo de preguntas requieren de una calificación manual</p>
+                <p >Este tipo de pregunta requiere calificación manual por el instructor.</p>
             </div>
             <form className='form' onSubmit={handleSubmit}>
                 <div className='question-text--container'>
@@ -41,7 +42,7 @@ export default function QuestionFreeText({ addQuestion, showNextQuestion }) {
                     <textarea placeholder="Ejemplo: Explica el proceso de lavado de manos" onChange={(e) => setText(e.target.value)}></textarea>
                 </div>
                 <div className='question-button'>
-                    <button className='question-button--addQuestion'>añadir pregunta</button>
+                    <button className='question-button--addQuestion'>Añadir</button>
                 </div>
             </form>
         </div>
