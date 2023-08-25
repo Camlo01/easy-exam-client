@@ -5,8 +5,13 @@ export default function Header() {
     return (
         <div className="header-header">
 
-            <div>
+            <div className='header-title'>
                 <h1>Website easy-exam</h1>
+                <div className='header-img'>
+                    <a href="https://gma.litmos.com/admin/dashboard">
+                        <img src="../public/campus-icon.png" alt="GMA Campus icon" />
+                    </a>
+                </div>
             </div>
 
             <div className='navButtons'>

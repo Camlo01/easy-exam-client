@@ -24,8 +24,35 @@
     padding-right: 20px;
 }
 
-.header-header h1 {
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-title h1 {
     font-size: 2.5rem;
+}
+
+.header-img {
+    background-color: #f1f1f1;
+    padding: 5px 15px;
+    margin-left: 30px;
+    border-radius: 7px;
+}
+
+.header-img img {
+    background-color: transparent;
+    height: 35px;
+    transition: all 0.3s;
+}
+
+.header-img:hover {
+    background-color: rgb(220, 220, 220);
+    transition: all 0.3s;
+}
+
+.header-img img:hover {
+    height: 50px;
 }
 
 button {
@@ -35,7 +62,7 @@ button {
     margin: 0 5px;
 }
 
-.navButtons{
+.navButtons {
     display: none;
 }
 
