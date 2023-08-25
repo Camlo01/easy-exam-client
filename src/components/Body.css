@@ -4,6 +4,11 @@
     color: var(--secondary-color);
 }
 
+.body-botton-plainText {
+    color: #f1f1f1;
+    font-size: 1.2rem;
+}
+
 .body-botton button {
     width: 160px;
     height: 70px;
