@@ -83,14 +83,18 @@ export default function Body() {
                 <br />
                 <div className="body-botton">
                     <form onSubmit={(e) => { e.preventDefault() }}>
-                        <p style={{ fontSize: "1.6rem" }}>Nombre examen: </p>
+                        <p>(Si es un documento de Isolución escribir el Código correspondiente)</p>
+                        <br />
+                        <p style={{ fontSize: "1.6rem" }}>Nombre archivo: </p>
                         <br />
                         <input
                             style={{ fontSize: '1.3rem' }}
                             value={fileName}
                             placeholder="Nombre del archivo"
                             type="text" onChange={(e) => { setFileName(e.target.value); }} />
-                        <br />
+                            <br />
+                            <br />
+                        <p>Da clic en "Generar Examen" y graba el documento en tu equipo. Recuerda que este archivo debes enviarlo al correo <p className="">aprendizajecolombia@gerdaudiaco.com</p></p>
                         <br />
                         <p style={{ fontSize: "1.6rem", alignSelf: 'center' }}>¿Qué deseas hacer?</p>
                         <br />
