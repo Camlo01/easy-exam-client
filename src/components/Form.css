@@ -7,6 +7,11 @@
     box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.75);
 }
 
+.form-addQuestion {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .buttonClose {
     padding: 6px;
     /* width: 25px; */
@@ -14,4 +19,12 @@
     color: white;
     position: relative;
     right: -20px;
+}
+
+.form-default p {
+    font-size: 1.4rem;
+}
+
+.form-counter {
+    font-size: 1.2rem;
 }
