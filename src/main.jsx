@@ -6,12 +6,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
-    path: "/easy-exam-client",
+    path: "/easy-exam",
     element: <App />
   }
   ,
   {
-    path: "/easy-exam-client/data",
+    path: "/easy-exam/data",
     element: <VisualizeData />
   }
 ])
