@@ -9,7 +9,7 @@ export default function Header() {
                 <h1>Website easy-exam</h1>
                 <div className='header-img'>
                     <a href="https://gma.litmos.com/admin/dashboard">
-                        <img src="../public/campus-icon.png" alt="GMA Campus icon" />
+                        <img src="../public/images/campus-icon.png" alt="GMA Campus icon" />
                     </a>
                 </div>
             </div>
