@@ -98,7 +98,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
      * @returns String of "TRUE" if the received value is 'on', otherwise it will default to "FALSE"
      */
     function defineValue(value) {
-        return (value == true) ? "TRUE" : "FALSE";
+        return (value) ? "TRUE" : "FALSE";
     }
 
 
