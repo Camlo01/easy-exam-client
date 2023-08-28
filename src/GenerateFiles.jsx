@@ -3,9 +3,9 @@ const URLHost = "http://3.14.27.129:8080/easy-exam/questionnaire";
 /**
  * Descarga un archivo de excel de extensión XSL
  * @param {Array} questions - Array de objetos de preguntas 
- * @param {String} nameFile - Nombre del archivo a generar
+ * @param {String} fileName - Nombre del archivo a generar
  */
-export function generateFileAsExcel(questions, nameFile) {
+export function generateFileAsExcel(questions, fileName) {
 
     const URL = `${URLHost}/document-xls`
 
@@ -19,7 +19,7 @@ export function generateFileAsExcel(questions, nameFile) {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = `${nameFile}.xls`;
+            a.download = `${fileName}.xls`;
             document.body.appendChild(a);
             a.click();
         })
@@ -31,12 +31,12 @@ export function generateFileAsExcel(questions, nameFile) {
 /**
  * Descarga un archivo de excel de extensión CSV
  * @param {Array} questions - Array de objetos de preguntas 
- * @param {String} nameFile - Nombre del archivo a generar
+ * @param {String} fileName - Nombre del archivo a generar
  */
-export function generateFileAsCSV(questions, nameFile) {
+export function generateFileAsCSV(questions, fileName) {
 
     let statusCode;
-    const URL = `${URLHost}/document-csv`
+    const URL = `${URLHost}/document-csv/${fileName}`
 
     fetch(URL, {
         method: "POST",
@@ -51,7 +51,7 @@ export function generateFileAsCSV(questions, nameFile) {
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = `${nameFile}.csv`;
+            a.download = `${fileName}.csv`;
             document.body.appendChild(a);
             a.click();``
             setTimeout(() => {
