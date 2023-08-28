@@ -6,6 +6,7 @@ import QuestionMatch from "../resources/typeQuestions/QuestionMatch"
 import QuestionMultichoice from "../resources/typeQuestions/QuestionMultichoice"
 import QuestionSequence from "../resources/typeQuestions/QuestionSequence"
 import QuestionKeyWord from "../resources/typeQuestions/QuestionKeyWord"
+import QuestionTrueFalse from "../resources/typeQuestions/QuestionTrueFalse";
 
 export default function FormQuestion({ addQuestion, counter }) {
 
@@ -30,6 +31,7 @@ export default function FormQuestion({ addQuestion, counter }) {
                     <option value="MULTICHOICE">Selección múltiple</option>
                     <option value="SEQUENCE">Secuencia</option>
                     <option value="KEYWORD">Palabras claves</option>
+                    <option value="TRUE-FALSE">Verdadero/Falso</option>
                 </select >
                 <br />
                 <br />
@@ -52,6 +54,8 @@ export default function FormQuestion({ addQuestion, counter }) {
                 return <QuestionSequence addQuestion={addQuestion} showNextQuestion={showNextQuestion} />;
             case "KEYWORD":
                 return <QuestionKeyWord addQuestion={addQuestion} showNextQuestion={showNextQuestion} />
+                case "TRUE-FALSE":
+                    return <QuestionTrueFalse addQuestion={addQuestion} showNextQuestion={showNextQuestion} />
             case "NEXT_QUESTION":
                 return (<>
                     <br />
