@@ -3,7 +3,7 @@ import './CardStyle.css'
 export default function MatchCard({ question, deleteQuestion, i }) {
 
     return (
-        <div className="question-card purple-card">
+        <div className="question-card">
             <h2>#{i} Selección Múltiple</h2>
             <p>{question.questionText}</p>
             <p>{addAnswer(question.answer1, question.isAnswer1)}</p>

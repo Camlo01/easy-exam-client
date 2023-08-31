@@ -3,7 +3,7 @@ import './CardStyle.css'
 export default function SequenceCard({ question, deleteQuestion, i }) {
 
     return (
-        <div className="question-card yellow-card">
+        <div className="question-card">
             <h2>#{i} Pregunta de Ordenar</h2>
             <p>{question.questionText}</p>
             <p>1. {question.sequenceText1}</p>
