@@ -2,59 +2,48 @@
     background-color: rgb(212, 212, 212);
     padding: 15px;
     display: flex;
-    /* justify-content: center; */
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: center;
 }
-
 
 /* General Styles for cards */
-
 .question-card {
     margin: 10px;
-    border-radius: 15px;
-    min-width: 300px;
+    border-radius: 4px;
     padding: 20px;
+    background-color: white;
+    border: solid 3px blue;
+
+    min-width: 20px;
+    max-width: 445px;
+
+    height: 480px;
+
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    text-align: justify;
 }
 
-/* For Color */
-.green-card {
-    background-color: rgb(60, 163, 60);
-    border: 7px solid #1b6102;
+.question-card--body {
+    min-width: 400px;
+    max-width: 490px;
 }
-
-.blue-card {
-    background-color: rgba(67, 128, 219, 0.979);
-    border: 7px solid #1a2355;
-}
-
-.purple-card {
-    background-color: rgba(214, 180, 218, 0.979);
-    border: 7px solid #59035c;
-}
-
-.yellow-card {
-    background-color: rgba(238, 232, 180, 0.979);
-    border: 7px solid #8a6d1c;
-}
-
-.red-card {
-    background-color: rgba(238, 176, 176, 0.979);
-    border: 7px solid #441e1e;
-}
-
 
 /* Card Text Styles */
 
 .question-card h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin: 0 auto 10px;
+    position: sticky;
 }
 
 /* Style for answers */
 
 .question-card p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin: 0 auto 30px;
 }
 
@@ -74,7 +63,10 @@
     color: rgb(241, 33, 33);
 }
 
-
+.card-button--container {
+    display: flex;
+    justify-content: end;
+}
 
 /* Styles for delete button */
 
@@ -93,6 +85,7 @@
 
 
 @media (max-width: 767px) {
+
     .questions-cards-container {
         background-color: rgb(212, 212, 212);
         padding: 15px;
@@ -110,7 +103,15 @@
         overflow-x: scroll;
         overscroll-behavior-x: contain;
         scroll-snap-type: x proximity;
+        /* padding-top: 175px; */
+    }
 
+    .question-card {
+        max-width: 320px;
+    }
+
+    .question-card p {
+        max-width: inherit;
     }
 
     .card-button--container {
