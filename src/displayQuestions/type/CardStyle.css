@@ -13,18 +13,21 @@
     border-radius: 4px;
     padding: 20px;
     background-color: white;
-    border: solid 3px blue;
+    border: solid 3px rgb(0, 137, 234);
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.75);
 
-    min-width: 20px;
-    max-width: 445px;
-
-    height: 480px;
+    /* width: 445px; */
+    width: 445px;
+    height: 450px;
 
     word-wrap: break-word;
     overflow: hidden;
     overflow-y: scroll;
 
     text-align: justify;
+    overflow-wrap: break-word;
 }
 
 .question-card--body {
