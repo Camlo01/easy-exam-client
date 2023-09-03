@@ -54,8 +54,8 @@ export default function FormQuestion({ addQuestion, counter }) {
                 return <QuestionSequence addQuestion={addQuestion} showNextQuestion={showNextQuestion} />;
             case "KEYWORD":
                 return <QuestionKeyWord addQuestion={addQuestion} showNextQuestion={showNextQuestion} />
-                case "TRUE-FALSE":
-                    return <QuestionTrueFalse addQuestion={addQuestion} showNextQuestion={showNextQuestion} />
+            case "TRUE-FALSE":
+                return <QuestionTrueFalse addQuestion={addQuestion} showNextQuestion={showNextQuestion} />
             case "NEXT_QUESTION":
                 return (<>
                     <br />
