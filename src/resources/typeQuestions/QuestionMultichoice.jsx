@@ -122,7 +122,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
                         <textarea placeholder="Uno" onChange={(e) => setAnswer1(e.target.value)} />
-                        <input type="checkbox" onChange={handleCheckboxChange1} />
+                        <input className="input-checkbox" type="checkbox" onChange={handleCheckboxChange1} />
                     </div>
                     <hr />
 
@@ -130,7 +130,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
                         <textarea placeholder="Dos" onChange={(e) => setAnswer2(e.target.value)} />
-                        <input type="checkbox" onChange={handleCheckboxChange2} />
+                        <input className="input-checkbox" type="checkbox" onChange={handleCheckboxChange2} />
                     </div>
                     <hr />
 
@@ -138,7 +138,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
                         <textarea placeholder="Tres" onChange={(e) => setAnswer3(e.target.value)} />
-                        <input type="checkbox" onChange={handleCheckboxChange3} />
+                        <input className="input-checkbox" type="checkbox" onChange={handleCheckboxChange3} />
                     </div>
                     <hr />
 
@@ -146,7 +146,7 @@ export default function QuestionMultichoice({ addQuestion, showNextQuestion }) {
                     <div className="answer-container--option">
                         <label htmlFor="">Opción</label>
                         <textarea placeholder="Cuatro" onChange={(e) => setAnswer4(e.target.value)} />
-                        <input type="checkbox" onChange={handleCheckboxChange4} />
+                        <input className="input-checkbox" type="checkbox" onChange={handleCheckboxChange4} />
                     </div>
                 </div>
                 <div className="question-button">
