@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import Info from "../components/Info"
 import Body from "../components/Body"
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 export default function ExamGenerator() {
 
@@ -10,7 +10,7 @@ export default function ExamGenerator() {
             <Header />
             <Info />
             <Body />
-            {/* <Footer /> */}
+            <Footer />
         </>
 
     )
