@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './styles/QuestionStyles.css'
 
 
 export default function QuestionTrueFalse({ addQuestion, showNextQuestion }) {
@@ -75,25 +76,28 @@ export default function QuestionTrueFalse({ addQuestion, showNextQuestion }) {
         <div className='card-container'>
             <div className="question-title">
                 <h3 className='question-title'><b style={{ color: "green" }}>Verdadero</b> / <b style={{ color: "red" }}>Falso</b></h3>
-                <p className='question-body'>Crea la pregunta e indica si es verdadero o falso la respuesta</p>
+                <p className='question-body'>Escribe el enunciado e indica si es verdadero o falso</p>
             </div>
             <form onSubmit={handleSubmit}>
 
                 <div className='question-text--container'>
-                    <p>Pregunta:</p>
+                    <p>Enunciado:</p>
                     <textarea placeholder="" onChange={(e) => setText(e.target.value)}></textarea>
                 </div>
 
                 <div className="question-answer--container">
 
-                    <div>
-                        <label htmlFor="TrueCheckBox">Verdadero</label>
-                        <input type="checkbox" id="TrueCheckBox" onChange={handleTrueCheckBox} />
+                    <div className="question-truefalse">
+                        <div className="question-truefalse-option">
+                            <label id="labelTrueCheckBox" htmlFor="TrueCheckBox">Verdadero</label>
+                            <input className="input-checkbox" type="checkbox" id="TrueCheckBox" onChange={handleTrueCheckBox} />
+                        </div>
 
-                        <label htmlFor="FalseCheckBox">Falso</label>
-                        <input type="checkbox" id="FalseCheckBox" onChange={handleFalseCheckBox} />
+                        <div className="question-truefalse-option">
+                            <label id="labelFalseCheckBox" htmlFor="FalseCheckBox">Falso</label>
+                            <input className="input-checkbox" type="checkbox" id="FalseCheckBox" onChange={handleFalseCheckBox} />
+                        </div>
                     </div>
-
 
                 </div>
                 <div className="question-button">
