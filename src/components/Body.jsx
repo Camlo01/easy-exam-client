@@ -10,6 +10,7 @@ export default function Body() {
     const [questions, setQuestions] = useState([])
     const [fileName, setFileName] = useState("")
     const [questionCounter, setCounter] = useState(0);
+    const forbiddenCharacters = ["/", "@", ",", ".", "?", "\"", "\'"]
 
     useEffect(() => {
     }, [])
@@ -25,6 +26,45 @@ export default function Body() {
         }
     });
 
+    /**
+     * method in charge to compare the fileName if there are any character invalid according to the array forbiddenCharacters
+     * @param {string} fileName to verify
+     * @returns boolean value
+     */
+    function isValidFileName(fileName) {
+
+        let anyInvadidCharacter = false;
+        const characters = fileName.split('')
+
+        for (let i = 0; i < characters.length; i++) {
+
+            for (let j = 0; j < forbiddenCharacters.length; j++) {
+                if (characters[i] == forbiddenCharacters[j]) {
+                    anyInvadidCharacter = true;
+                }
+
+            }
+        }
+        return !anyInvadidCharacter;
+    }
+
+    /**
+     * method in charge of valide that the filename doesn´t invluce invalid characters
+     * @param {string} fileName 
+     */
+    function configFileName(fileName) {
+        if (isValidFileName(fileName)) {
+            setFileName(fileName)
+        } else {
+            let characters = " ";
+
+            forbiddenCharacters.forEach(char => {
+                characters += "\"" + char + "\"  ";
+            })
+
+            alert("El nombre no puede contener:  " + characters.slice(0, characters.length - 2));
+        }
+    }
     /**
      * Method in charge of delete questions of the array
      * @param {int} id of question to delete 
@@ -93,7 +133,7 @@ export default function Body() {
                                 style={{ fontSize: '1.3rem' }}
                                 value={fileName}
                                 placeholder="Nombre del archivo"
-                                type="text" onChange={(e) => { setFileName(e.target.value); }} />
+                                type="text" onChange={(e) => { configFileName(e.target.value); }} />
                         </div>
 
                         <br />
